@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace program
 {
@@ -6,28 +6,29 @@ namespace program
     {
         static void Main(string[] args)
         {
-            int n = 1;
             bool b = true;
-            for(int i = 10; b == true; i = i + n)
+            int n = 0;
+            for(int i = 0; b == true; )
             {
-                Console.WriteLine(i);
-                switch (i)
+                Console.WriteLine("Vill du skriva in ett heltal? y/n");
+                string svar = Console.ReadLine();
+                if (svar == "y")
                 {
-                    case 30:
-                        i = 200;
-                        n = -1;
-                        break;
-                    case 180:
-                        i = 1000;
-                        n = 50;
-                        break;
-                    case 1400:
-                        b = false;
-                        break;
-
-
+                    n = int.Parse(Console.ReadLine());
+                    if (n > i)
+                    {
+                        i = n;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Detta är det största talet du skrev: " + i);
+                    b = false;
                 }
             }
+
+           
+            
         }
     }
 }
